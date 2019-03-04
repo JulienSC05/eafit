@@ -1,11 +1,10 @@
 doctrine:
     dbal:
-        dbname:   database
-        host:     localhost
-        port:     3306
-        user:     user
-        password: pwd
-        driver:   pdo_mysql
+        dbname: '%env(DATABASE_NAME)%'
+        host: 127.0.0.1
+        port: 8888
+        user: '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PWD)%'
     orm:
         auto_generate_proxy_classes: false
         metadata_cache_driver:
