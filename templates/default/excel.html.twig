@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+
+{% endblock %}
+{% block body %}
+<div class="container-fluid">
+        <div class="col-md-6 offset-md-3 text-center" style="margin-top: 100px">
+            <a href="{{ path('extraxt') }}" target="_blank">
+                <img src="{{ asset('img/excel128.png') }}" class="mr-2"><br><br>
+                <button class="btn btn-success btn-lg">Extraire les résultats au format Excel</button>
+            </a>
+
+        </div>
+</div>
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}

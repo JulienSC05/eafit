@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+
+{% endblock %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <div class="col-lg-12" style="margin-top: 100px">
+                <h1 class=" display-3">Grand jeu EAFIT</h1>
+                <p>tentez de gagner des cadeaux</p>
+                <a href="{{ path('form') }}" class="btn btn-danger btn-lg">Participez</a>
+            </div>
+
+            <div class="col-lg-12" style="margin-top: 100px">
+                <img src="https://www.lapharmaciecentrale.fr/fpdb/12212427-eafitlogo.jpg">
+            </div>
+
+        </div>
+
+        <div class="col-lg-6"><img src="https://www.eafit.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/w/h/whey-gainer-web_1.png" width="100%"></div>
+    </div>
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        toastr.options = {
+            "closeButton": true, // true/false
+            "debug": false, // true/false
+            "newestOnTop": false, // true/false
+            "progressBar": false, // true/false
+            "positionClass": "toast-top-full-width", // toast-top-right / toast-top-left / toast-bottom-right / toast-bottom-left
+            "preventDuplicates": false, //true/false
+            "onclick": null,
+            "showDuration": "300", // in milliseconds
+            "hideDuration": "1000", // in milliseconds
+            "timeOut": "5000", // in milliseconds
+            "extendedTimeOut": "1000", // in milliseconds
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                toastr["{{ label }}"]("{{ message }}")
+            {% endfor %}
+        {% endfor %}
+
+        function showModalLoading(texte)
+        {
+            $('#loadingText').text(texte);
+            $('#modalLoading').modal('show');
+        }
+
+    </script>
+{% endblock %}

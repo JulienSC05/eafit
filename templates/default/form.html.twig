@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+
+{% endblock %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3" style="margin-top: 100px">
+            {{ form_start(form) }}
+            <div class="text-center border border-light p-5" action="{{ path('excel') }}">
+                <p class="h4 mb-4">Créer mon compte</p>
+
+                <p>Créez votre compte pour participer au jeu EAFIT</p>
+
+                {{ form_widget(form.nom,{'attr': {'class': 'form-control mb-4','placeholder':'Nom'}}) }}
+                {{ form_widget(form.prenom,{'attr': {'class': 'form-control mb-4','placeholder':'Prénom'}}) }}
+                {{ form_widget(form.email,{'attr': {'class': 'form-control mb-4','placeholder':'Email'}}) }}
+                <!-- Name -->
+
+
+                <!-- Default checked -->
+                <label  for="customSwitch1">Recevoir la newsletter</label>
+                <div class="switch">
+                    <label>Non{{ form_widget(form.newsletter,{'attr': {'checked': 'checked'}}) }}<span class="lever"></span>Oui</label>
+                </div>
+                {{ form_widget(form.save,{'attr': {'class': 'btn btn-info btn-block'}}) }}
+
+
+            {{ form_end(form) }}
+                </div>
+        </div>
+
+    </div>
+</div>
+ {#
+
+ {{ form(form) }}
+
+ #}
+    <!-- Default form subscription -->
+
+    <!-- Default form subscription -->
+
+{% endblock %}
+{% block javascripts %}
+
+{% endblock %}
