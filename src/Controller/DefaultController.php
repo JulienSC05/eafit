@@ -46,7 +46,7 @@ class DefaultController extends AbstractController
             ->add('prenom', TextType::class)
             ->add('email', EmailType::class)
             ->add('newsletter', CheckboxType::class)
-            ->add('save', SubmitType::class, ['label' => 'Jouer'])
+            ->add('save', SubmitType::class, ['label' => 'l'])
             ->getForm();
 
 
